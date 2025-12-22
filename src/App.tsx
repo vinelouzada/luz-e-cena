@@ -1,14 +1,12 @@
 import './App.css'
 import Banner from './components/banner/banner'
-import Link from './components/link/link'
+import Header from './components/header/header';
 
 function App() {
   return (
       <>
+          <Header />
           <Banner src="./banner.png" alt="Banner" />
-          <Link href="/" target="_blank">
-              Link
-          </Link>
       </>
   );
 }

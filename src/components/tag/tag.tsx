@@ -1,8 +1,6 @@
 import { useStyles } from './tag-styles';
 import classNames from 'classnames';
-
-type Categoria = "2D" | "3D";
-type Censura = "Livre" | "10 anos" | "12 anos" | "14 anos" | "16 anos";
+import type { Categoria, Censura } from '../../types';
 
 interface TagProps {
     value: Categoria | Censura;

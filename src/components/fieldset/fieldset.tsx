@@ -5,12 +5,11 @@ interface FieldsetProps extends React.HTMLAttributes<HTMLFieldSetElement> {
   variant: 'primary' | 'secondary';
 }
 
-function Fieldset({ variant, children, ...rest }: FieldsetProps) {
+function Fieldset({ variant = 'primary', children}: FieldsetProps) {
   const styles = useStyles();
 
   return (
     <fieldset
-      {...rest}
       className={`${styles.inputWrapper} ${
         variant === 'primary' ? styles.primary : styles.secondary
       }`}

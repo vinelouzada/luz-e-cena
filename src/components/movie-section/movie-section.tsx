@@ -4,29 +4,14 @@ import InputText from '../input-text/input-text';
 import Button from '../button/button';
 import { FaSearch } from 'react-icons/fa';
 import MovieList from '../movie-list/movie-list';
-import type { Movie } from '../../types';
-import { getMovies } from '../../api';
-import { useEffect, useState } from 'react';
+import useFetchMovies from '../../hooks/useFetchMovies';
 
 
 function MovieSection() {
   const styles = useStyles();
 
-  const [movies, setMovies] = useState<Movie[]>([]);
-  
-  const fetchMovies = async () => {
-    try {
-        const response = await getMovies();
-        setMovies(response);
-    } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
-    }
-  }
+  const { movies, loading, error } = useFetchMovies();
 
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-  
   return (
     <main>
         <section className={styles.container}>
